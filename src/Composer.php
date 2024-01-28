@@ -22,9 +22,10 @@ class Composer
     public static function getPackageExtra(string $key = null): array
     {
         if (!self::$extra) {
-            self::getExtraContent();
-//            self::getSelfExtraContent();
+            self::getExtraContent();        // 读取composer.lock 依赖exewen所有项目的extra信息
+            self::getSelfExtraContent();    // 读取composer.json 当前项目的extra信息
         }
+
         if ($key === null) {
             return self::$extra;
         }
@@ -43,11 +44,12 @@ class Composer
                 }
             }
         }
+
         return $extra;
     }
 
     /**
-     * 获取composer.lock extra信息
+     * 获取composer.lock 所有项目的extra信息
      * @return void
      */
     public static function getExtraContent()

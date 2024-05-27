@@ -15,7 +15,7 @@
         "utils"
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=7.3",
         "illuminate/collections": "^8"
     },
     "require-dev": {
@@ -31,7 +31,7 @@
             "ExewenTest\\Utils\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "config": {
         "sort-packages": true
     },

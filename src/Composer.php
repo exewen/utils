@@ -12,7 +12,8 @@ class Composer
     /**
      * @var array
      */
-    private static array $extra = [];
+//    private static array $extra = [];
+    private static $extra = [];
 
     /**
      * 获取composer.lock extra合并信息

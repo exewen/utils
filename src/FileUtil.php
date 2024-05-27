@@ -3,9 +3,12 @@ declare(strict_types=1);
 
 namespace Exewen\Utils;
 
+use SplFileInfo;
+
 class FileUtil
 {
-    private static string $snapshotPath = BASE_PATH_PKG . "/config/nacos/env";
+//    private static string $snapshotPath = BASE_PATH_PKG . "/config/nacos/env";
+    private static $snapshotPath = BASE_PATH_PKG . "/config/nacos/env";
 
     /**
      * 设置配置储存地址
@@ -32,7 +35,7 @@ class FileUtil
         if (!$dataIdConfig) {
             @unlink($snapshotFile);
         } else {
-            $file = new \SplFileInfo($snapshotFile);
+            $file = new SplFileInfo($snapshotFile);
             if (!is_dir($file->getPath())) {
                 mkdir($file->getPath(), 0777, true);
             }
